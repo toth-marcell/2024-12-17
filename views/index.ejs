@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decorations</title>
+  </head>
+  <body>
+    <button type="button" onclick="enterEditMode()" id="editModeButton">
+      Enter edit mode
+    </button>
+    <table>
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>name</th>
+          <th>stock</th>
+          <th>price</th>
+        </tr>
+      </thead>
+      <tbody id="table">
+        <% for (decor of decors) { %>
+        <tr>
+          <td><%= decor.id %></td>
+          <td><%= decor.name %></td>
+          <td><%= decor.stock %></td>
+          <td><%= decor.price %></td>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+    <form action="/decoration" method="post">
+      <input type="text" name="name">
+      <input type="text" name="stock">
+      <input type="text" name="price">
+      <button>Add new</button>
+    </form>
+  </body>
+</html>
