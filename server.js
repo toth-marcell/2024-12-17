@@ -20,6 +20,7 @@ app.post("/decoration", async (req, res) => {
   const existing = await Decoration.findByPk(id);
   if (existing) {
     await existing.update({
+      name: req.body.name,
       stock: req.body.stock,
       price: req.body.price,
     });
