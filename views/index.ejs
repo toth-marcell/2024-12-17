@@ -11,11 +11,11 @@
     <button type="button" onclick="enterEditMode()" id="editModeButton">
       Enter edit mode
     </button>
-    <a href="/"
-      ><button id="leaveEditModeButton" style="display: none">
+    <a href="/">
+      <button id="leaveEditModeButton" style="display: none">
         Leave edit mode
-      </button></a
-    >
+      </button>
+    </a>
     <table>
       <thead>
         <tr>
@@ -27,7 +27,7 @@
         </tr>
       </thead>
       <tbody id="table">
-        <% for (decor of decors) { %>
+        <% for (decor of decors) { -%>
         <tr>
           <td>
             <button type="button" onclick="deleteItem('<%= decor.id %>')">
@@ -39,7 +39,7 @@
           <td><%= decor.stock %></td>
           <td><%= decor.price %></td>
         </tr>
-        <% } %>
+        <% } -%>
       </tbody>
     </table>
     <form action="/decoration" method="post" id="newForm">
